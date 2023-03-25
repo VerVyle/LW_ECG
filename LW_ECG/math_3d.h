@@ -3,22 +3,17 @@
 #ifndef MATH_3D_H
 #define	MATH_3D_H
 
-
-struct Vector3f
-{
+struct Vector3f {
     float x;
     float y;
     float z;
 
-    Vector3f()
-    {
-    }
+    Vector3f() : x(0),y(0),z(0) {}
 
-    Vector3f(float _x, float _y, float _z)
-    {
-        x = _x;
-        y = _y;
-        z = _z;
+    Vector3f(float x, float y, float z) {
+        this->x = x;
+        this->y = y;
+        this->z = z;
     }
 };
 
