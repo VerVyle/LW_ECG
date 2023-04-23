@@ -17,11 +17,11 @@ static void RenderSceneCB() {
 
 	glDisableVertexAttribArray(0);
 
-	glutSwapBuffers(); // îòðèñîâêà
+	glutSwapBuffers(); // отрисовка
 }
 
 static void InitializeGlutCallbacks() {
-	glutDisplayFunc(RenderSceneCB); // Ýòà ôóíêöèÿ ðåãóëÿðíî âûçûâàåòñÿ GLUT'îì.
+	glutDisplayFunc(RenderSceneCB); // Эта функция регулярно вызывается GLUT'ом.
 }
 
 static void CreateVertexBuffer() {
@@ -36,23 +36,23 @@ static void CreateVertexBuffer() {
 }
 
 void invoke3(int argc, char** argv) {
-	glutInit(&argc, argv); // Èíèöèàëèçàöèÿ OpenGL utility library ñ ïàðàìåòðàìè èç êîìàíäíîé ñòðîêè
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA); // GLUT_DOUBLE âêëþ÷àåò äâîéíóþ áóôåðèçàöèþ, GLUT_RGBA - áóôåð öâåòà, íåïðåðûâíî èñïîëüçóåìîãî äëÿ êîíå÷íîé öåëè ðåíäåðèíãà (ò.å. íà ýêðàíå).
+	glutInit(&argc, argv); // Инициализация OpenGL utility library с параметрами из командной строки
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA); // GLUT_DOUBLE включает двойную буферизацию, GLUT_RGBA - буфер цвета, непрерывно используемого для конечной цели рендеринга (т.е. на экране).
 	glutInitWindowSize(1024, 768);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Task 3"); // Ýòè ôóíêöèè çàäàþò ïàðàìåòðû îêíà è ñîçäàþò åãî. Òàê æå ìû äàåì åìó çàãîëîâîê.
+	glutCreateWindow("Task 3"); // Эти функции задают параметры окна и создают его. Так же мы даем ему заголовок.
 
-	InitializeGlutCallbacks(); // ôóíêöèÿ îáðàòíîãî âûçîâà.
+	InitializeGlutCallbacks(); // функция обратного вызова.
 
 	GLenum res = glewInit();
 	if (res != GLEW_OK) {
 		fprintf(stderr, "Error: '%s'\n", glewGetErrorString(res));
 		return;
-	} // Òåïåðü ìû èíèöèàëèçèðóåì GLEW è ïðîâåðÿåì íà îøèáêè. GLUT íåîáõîäèìî èíèöèàëèçèðîâàòü ïåðåä ýòèì.
+	} // Теперь мы инициализируем GLEW и проверяем на ошибки. GLUT необходимо инициализировать перед этим.
 
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // óñòàíàâëèâàåò öâåò, êîòîðûé áóäåò èñïîëüçîâàí âî âðåìÿ î÷èñòêè áóôåðà êàäðà.
+	glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // устанавливает цвет, который будет использован во время очистки буфера кадра.
 
-	CreateVertexBuffer(); // ñîçäàíèå òðåóãîëüíèêà.
+	CreateVertexBuffer(); // создание треугольника.
 
-	glutMainLoop(); // ïåðåäà÷à óïðàâëåíèÿ GLUT.
+	glutMainLoop(); // передача управления GLUT.
 }
