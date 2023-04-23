@@ -40,7 +40,7 @@ void invoke2(int argc, char** argv){
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
     glutInitWindowSize(1024, 768);
     glutInitWindowPosition(100, 100);
-    glutCreateWindow("Tutorial 02");
+    glutCreateWindow("Task 2");
 
     InitializeGlutCallbacks();
 
