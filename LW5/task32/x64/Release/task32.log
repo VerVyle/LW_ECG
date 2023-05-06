@@ -1,0 +1,8 @@
+﻿  lighting_technique.cpp
+C:\Users\timur\source\repos\LW_ECG3\task32\lighting_technique.cpp(383,58): warning C4244: аргумент: преобразование "double" в "float", возможна потеря данных
+  Создание кода
+  1 of 524 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  task32.vcxproj -> C:\Users\timur\source\repos\LW_ECG3\x64\Release\task32.exe
